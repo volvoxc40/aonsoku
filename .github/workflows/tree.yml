@@ -1,0 +1,17 @@
+name: Show Repo Tree
+
+on:
+  workflow_dispatch:
+
+jobs:
+  explore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Show tree
+        run: |
+          sudo apt-get update
+          sudo apt-get install tree
+          tree -L 2
